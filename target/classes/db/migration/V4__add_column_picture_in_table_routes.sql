@@ -1,0 +1,11 @@
+ALTER TABLE routes ADD COLUMN finish_image BYTEA;
+
+CREATE TABLE route_points (
+    id UUID PRIMARY KEY ,
+    route_id UUID NOT NULL REFERENCES routes(id) ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

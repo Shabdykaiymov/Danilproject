@@ -1,0 +1,3 @@
+ALTER TABLE routes ADD COLUMN start_location VARCHAR(200) NOT NULL;
+ALTER TABLE routes ADD COLUMN end_location VARCHAR(200) NOT NULL;
+

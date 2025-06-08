@@ -1,0 +1,6 @@
+CREATE TABLE favorite_routes(
+    id UUID PRIMARY KEY,
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    route_id UUID REFERENCES routes(id) ON DELETE CASCADE,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)

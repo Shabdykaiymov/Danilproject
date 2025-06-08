@@ -1,0 +1,13 @@
+CREATE TABLE routes (
+    id UUID PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    start_lat DOUBLE PRECISION NOT NULL,
+    start_lng DOUBLE PRECISION NOT NULL,
+    end_lat DOUBLE PRECISION NOT NULL,
+    end_lng DOUBLE PRECISION NOT NULL,
+    user_id UUID REFERENCES users(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
